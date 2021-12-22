@@ -3,7 +3,6 @@ import ProductItem from "../Components/ProductItem";
 import { useSelector, useDispatch } from "react-redux";
 import { productActions } from "../store/product";
 import Categories from "../Components/Categories";
-import Header from "./../Components/Header";
 import Cart from "../Components/Cart";
 import "./Homepage.css";
 
@@ -26,7 +25,6 @@ function Homepage() {
 
   return (
     <div>
-      <Header></Header>
       <div className="containerHomepage">
         <div className="category">
           <h2 className="heading">Categories</h2>
