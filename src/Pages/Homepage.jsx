@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductItem from "../Components/ProductItem";
+import CartItem from "../Components/CartItem";
 import "./Homepage.css";
 
 function Homepage() {
@@ -27,6 +28,9 @@ function Homepage() {
       </div>
       <div className="cartpage">
         <h2 className="heading">My Cart</h2>
+        <div>
+            <CartItem></CartItem>
+        </div>
       </div>
     </div>
   );
