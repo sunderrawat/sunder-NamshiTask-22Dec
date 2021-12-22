@@ -78,6 +78,10 @@
   padding: 2rem;
 }
 
+.breadcum{
+  font-size: 2.5rem;
+}
+
 @media screen and (max-width: 600px) {
   .containerHomepage {
     flex-direction: column;
