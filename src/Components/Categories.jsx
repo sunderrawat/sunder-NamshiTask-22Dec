@@ -38,9 +38,10 @@ function Categories() {
         All Items
       </li>
       {categoryData &&
-        categoryData.map((data) => {
+        categoryData.map((data, index) => {
           return (
             <li
+              key={index}
               onClick={() => selectCategoryHandler(data)}
               className={`${selectCategory === data && "select"}`}
             >

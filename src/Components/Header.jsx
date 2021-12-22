@@ -1,18 +1,32 @@
+import React from "react"
+import "./Header.css";
+
 function Header(){
-    return <div className="header">
+    return (
+      <div className="header">
         <nav className="nav">
-            <div>
-                <img src="" alt=""  className="logo"/>
-                <div className="details">
-                    <h2>Petopia</h2>
-                    <p>11th Cross, India Nagar, chennai, Tamilnadu, India </p>
-                </div>
+          <div className="nav__left">
+            <img
+              src="https://www.sigaramtech.com/images/logo.png"
+              alt=""
+              className="logo"
+            />
+            <div className="header__details">
+              <h2 className="header__title">Sigaram Shop</h2>
+                <p className="header__addr">
+                  No 9. 11th Cross Street, Indira Nagar, Adyar Chennai, TN -
+                  600020
+                </p>
             </div>
-            <ul>
-                <li>Contact Us</li>
-                <li>Cart</li>
-                <li>My Account</li>
-            </ul>
+          </div>
+          <ul className="nav__right">
+            <li className="nav__item">Contact Us</li>
+            <li className="nav__item">Cart</li>
+            <li className="nav__item">My Account</li>
+          </ul>
         </nav>
-    </div>
+      </div>
+    );
 }
+
+export default Header;

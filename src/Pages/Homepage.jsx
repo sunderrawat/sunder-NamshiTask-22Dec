@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { productActions } from "../store/product";
 import CartItem from "../Components/CartItem";
 import Categories from "../Components/Categories";
+import Header from "./../Components/Header";
 import "./Homepage.css";
 
 function Homepage() {
@@ -15,7 +16,7 @@ function Homepage() {
     cartData.map((item) => {
       price = price + item.price;
     });
-   function getAllData() {
+  function getAllData() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
@@ -28,42 +29,45 @@ function Homepage() {
   }, []);
 
   return (
-    <div className="containerHomepage">
-      <div className="category">
-        <h2 className="heading">Categories</h2>
-        <Categories></Categories>
-      </div>
-      <div className="productlist">
-        {data
-          ? data.map((item) => (
-              <ProductItem data={item} key={item.id}></ProductItem>
-            ))
-          : "Loading..."}
-      </div>
-      <div className="cartpage">
-        <h2 className="heading">My Cart</h2>
-        <div>
-          {cartData && cartData.length > 0 ? (
-            <div>
-              {cartData.map((data, index) => {
-                return (
-                  <div key={index}>
-                    <CartItem data={data}></CartItem>
+    <div>
+      <Header></Header>
+      <div className="containerHomepage">
+        <div className="category">
+          <h2 className="heading">Categories</h2>
+          <Categories></Categories>
+        </div>
+        <div className="productlist">
+          {data
+            ? data.map((item) => (
+                <ProductItem data={item} key={item.id}></ProductItem>
+              ))
+            : "Loading..."}
+        </div>
+        <div className="cartpage">
+          <h2 className="heading">My Cart</h2>
+          <div>
+            {cartData && cartData.length > 0 ? (
+              <div>
+                {cartData.map((data, index) => {
+                  return (
+                    <div key={index}>
+                      <CartItem data={data}></CartItem>
+                    </div>
+                  );
+                })}
+                <div className="cartBottom">
+                  <div className="totalBox">
+                    <div className="toatalText">Item Total</div>
+                    <div className="totalPrice">&#8377; {price.toFixed(2)}</div>
                   </div>
-                );
-              })}
-              <div className="cartBottom">
-                <div className="totalBox">
-                  <div className="toatalText">Item Total</div>
-                  <div className="totalPrice">&#8377; {price.toFixed(2)}</div>
-                </div>
 
-                <div className="checkout">Check Out</div>
+                  <div className="checkout">Check Out</div>
+                </div>
               </div>
-            </div>
-          ) : (
-            <h2>No Item in Cart</h2>
-          )}
+            ) : (
+              <h2 className="noitem">No Item in Cart</h2>
+            )}
+          </div>
         </div>
       </div>
     </div>
