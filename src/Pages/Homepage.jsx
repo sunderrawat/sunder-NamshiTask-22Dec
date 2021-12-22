@@ -6,7 +6,13 @@ import "./Homepage.css";
 
 function Homepage() {
   const [data, setData] = useState();
-  const cartData = useSelector((state)=>state.cart.cartData);
+  let price = 0;
+  const cartData = useSelector((state) => state.cart.cartDataItem);
+//   console.log(cartData);
+  cartData.length > 0 &&
+    cartData.map((item) => {
+      price = price + item.price;
+    });
   const dispatch = useDispatch();
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -32,7 +38,27 @@ function Homepage() {
       <div className="cartpage">
         <h2 className="heading">My Cart</h2>
         <div>
-            <CartItem></CartItem>
+          {cartData && cartData.length > 0 ? (
+            <div>
+              {cartData.map((data, index) => {
+                return (
+                  <div key={index}>
+                    <CartItem data={data}></CartItem>
+                  </div>
+                );
+              })}
+              <div>
+                <div>
+                  <div>Item Total</div>
+                  <div>&#8377; {price.toFixed(2)}</div>
+                </div>
+
+                <div className="checkout">Check Out</div>
+              </div>
+            </div>
+          ) : (
+            <h2>No Item in Cart</h2>
+          )}
         </div>
       </div>
     </div>

@@ -4,8 +4,11 @@ import { cartActions } from "../store/cart";
 import "./ProductItem.css";
 function ProductItem(props) {
   const dispatch = useDispatch();
+  const cartData = useSelector((state) => state.cart.cartDataItem);
   function cartAddHandler(item) {
-    dispatch(cartActions.cartDataHandler(item));
+    let arr = [...cartData];
+    arr.push(item);
+    dispatch(cartActions.cartDataHandler(arr));
     console.log("Item Added to Cart successfully");
   }
   return (
