@@ -1,0 +1,24 @@
+.containerHomepage {
+  display: flex;
+  gap: 2rem;
+}
+.category {
+  flex-basis: 25%;
+  box-shadow: 11px 10px 16px -5px rgba(0,0,0,0.75);
+  border-radius: 2rem;
+}
+.cartpage {
+  flex-basis: 25%;
+  border-radius: 2rem;
+  box-shadow: -7px 10px 5px 0px rgba(0, 0, 0, 0.466);
+}
+.productlist {
+  flex-basis: 50%;
+}
+
+.heading {
+  font-size: 2rem;
+  color: coral;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid gray;
+}

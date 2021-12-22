@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 0.7rem 2.9rem 0px;
+  transition: all 0.3s;
+  border-radius: 1rem;
+  overflow: hidden;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.detailsbox {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-start;
+  text-align: left;
+  gap: 2rem;
+}
+.img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 1.6rem;
+}
+
+.btn {
+  font-size: 2.2rem;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border: 1px solid coral;
+  text-decoration: none;
+}
