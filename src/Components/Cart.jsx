@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 function Cart() {
   let price = 0;
   const cartData = useSelector((state) => state.cart.cartDataItem);
-
   cartData.length > 0 &&
     cartData.map((item) => {
       price = price + item.price;
