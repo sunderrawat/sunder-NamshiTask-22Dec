@@ -17,7 +17,7 @@ const cartSlice = createSlice({
       state.totalCartItem = action.payload;
     },
     cartDataHandler(state, action) {
-      state.cartData = cartData.push(action.payload);
+      state.cartData = state.cartData.push(action.payload);
     },
   },
 });
