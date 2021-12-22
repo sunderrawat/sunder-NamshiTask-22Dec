@@ -1,6 +1,8 @@
 .header {
   height: 8rem;
   margin-bottom: 2rem;
+  position: fixed;
+  width: 100%;
   color: #fff;
   font-size: 2rem;
   background: rgb(2, 0, 36);
@@ -54,4 +56,26 @@
 }
 .nav li:hover{
   color: coral;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    font-size: 1.6rem;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .header__details{
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+    margin-top: 1rem;
+  }
+  .header__addr{
+    font-size: 1rem;
+  }
+  .header__title{
+    font-size: 1.7rem;
+}
+  .logo{
+    height: 4rem;
+  }
 }
