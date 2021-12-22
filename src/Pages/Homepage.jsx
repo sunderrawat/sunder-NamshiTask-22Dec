@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
 import ProductItem from "../Components/ProductItem";
 import { useSelector, useDispatch } from "react-redux";
+import { productActions } from "../store/product";
 import CartItem from "../Components/CartItem";
 import "./Homepage.css";
 
 function Homepage() {
-  const [data, setData] = useState();
   let price = 0;
   const cartData = useSelector((state) => state.cart.cartDataItem);
-//   console.log(cartData);
+  const data = useSelector((state) => state.product.productData);
+  const dispatch = useDispatch();
   cartData.length > 0 &&
     cartData.map((item) => {
       price = price + item.price;
     });
-  const dispatch = useDispatch();
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
-        console.log(data);
-      });
+        dispatch(productActions.productDataHandler(data));
+      })
+      .catch((e) => console.log(e));
   }, []);
 
   return (
