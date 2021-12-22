@@ -1,10 +1,11 @@
 .containerHomepage {
   display: flex;
   gap: 2rem;
+  margin-bottom: 5rem;
 }
 .category {
   flex-basis: 25%;
-  box-shadow: 11px 10px 16px -5px rgba(0,0,0,0.75);
+  box-shadow: 11px 10px 16px -5px rgba(0, 0, 0, 0.75);
   border-radius: 2rem;
 }
 .cartpage {
@@ -23,9 +24,53 @@
   border-bottom: 1px solid gray;
 }
 
+.category li {
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 1rem;
+  transition: all 0.5s;
+}
+.category li:hover,.select {
+  background-color: coral;
+  border-radius: 2rem;
+}
+
+.cartBottom{
+    display: flex;
+    flex-direction: column;
+    border-top: 0.5px solid gray;;
+}
+
+.totalBox{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+.toatalText{
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+.totalPrice{
+    font-size: 2.6rem;
+    font-weight: 800;
+}
+
+.checkout{
+    padding: 1rem;
+    background-color: coral;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 0 1rem;
+}
 
 @media screen and (max-width: 600px) {
-  .container {
+  .containerHomepage  {
     flex-direction: column;
   }
 }

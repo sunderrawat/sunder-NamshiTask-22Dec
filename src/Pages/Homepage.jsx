@@ -3,6 +3,7 @@ import ProductItem from "../Components/ProductItem";
 import { useSelector, useDispatch } from "react-redux";
 import { productActions } from "../store/product";
 import CartItem from "../Components/CartItem";
+import Categories from "../Components/Categories";
 import "./Homepage.css";
 
 function Homepage() {
@@ -14,19 +15,23 @@ function Homepage() {
     cartData.map((item) => {
       price = price + item.price;
     });
-  useEffect(() => {
+   function getAllData() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
         dispatch(productActions.productDataHandler(data));
       })
       .catch((e) => console.log(e));
+  }
+  useEffect(() => {
+    getAllData();
   }, []);
 
   return (
     <div className="containerHomepage">
       <div className="category">
         <h2 className="heading">Categories</h2>
+        <Categories></Categories>
       </div>
       <div className="productlist">
         {data
@@ -47,10 +52,10 @@ function Homepage() {
                   </div>
                 );
               })}
-              <div>
-                <div>
-                  <div>Item Total</div>
-                  <div>&#8377; {price.toFixed(2)}</div>
+              <div className="cartBottom">
+                <div className="totalBox">
+                  <div className="toatalText">Item Total</div>
+                  <div className="totalPrice">&#8377; {price.toFixed(2)}</div>
                 </div>
 
                 <div className="checkout">Check Out</div>

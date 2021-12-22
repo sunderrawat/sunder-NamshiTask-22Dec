@@ -19,7 +19,7 @@ function ProductItem(props) {
       <div className="detailsbox">
         <h2 className="title">{props.data.title}</h2>
         <div className="price">&#8377; {props.data.price}</div>
-        <p className="description">{props.data.description}</p>
+        <p className="description">{props.data.description.length>150 ?props.data.description.slice(0,150)+" read more..." : props.data.description }</p>
       </div>
       <div className="buttonbox">
         <button

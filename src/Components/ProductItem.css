@@ -45,3 +45,29 @@
   border: 1px solid coral;
   text-decoration: none;
 }
+
+/* cart css */
+.cartItemContainer{
+    display: flex;
+    padding: 2rem;
+}
+
+.cart__title{
+    flex-basis: 60%;
+    text-align: left;
+}
+.cart__price{
+    flex-basis: 40%;
+    text-align: right;
+}
+.cart__title, .cart__price{
+    font-size: 1.7rem;
+    font-weight: 500;
+
+}
+
+@media screen and (max-width: 600px) {
+  .container  {
+    flex-direction: column;
+  }
+}
