@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ProductItem from "../Components/ProductItem";
+import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../Components/CartItem";
 import "./Homepage.css";
 
 function Homepage() {
   const [data, setData] = useState();
+  const cartData = useSelector((state)=>state.cart.cartData);
+  const dispatch = useDispatch();
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
