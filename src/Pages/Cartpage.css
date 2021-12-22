@@ -1,14 +1,17 @@
-.cartpage__container{
-  padding: 15rem !important;
+.cartpage__container {
+  padding: 15rem ;
 }
-.breadcum{
+.breadcum {
   font-size: 2.5rem;
   text-align: left;
   margin-bottom: 5rem;
 }
 
 @media screen and (max-width: 600px) {
-  .cartpage__container{
-  padding: 15rem 2rem;
+  .cartpage__container {
+    padding: 12rem 2rem;
+  }
+  .breadcum {
+  margin-bottom: 2rem;
 }
 }
